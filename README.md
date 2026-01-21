@@ -1,4 +1,4 @@
-# VitePress-devops-demo
+# VitePress-Devops-demo
 
 ## 📋 项目简介
 使用VitePress创建文档网站，并使用jenkins流水线持续部署
@@ -7,8 +7,8 @@
 | 技术 | 版本 | 说明 |
 |------|------|------|
 | VitePress | Latest | 静态网站生成器 |
-| jenkins | Latest | 自动化服务器 |
-| docker | 20.10.23 | 容器化环境 |
+| Jenkins | Latest | 自动化服务器 |
+| Docker | 20.10.23 | 容器化环境 |
 
 ## 📁 项目结构
 ```text
@@ -58,7 +58,6 @@ npm run docs:build //打包
 ### gitee仓库
 可以在WebStorm中登录gitee账户，然后直接推送
 
-
 ### 部署jenkins
 ```docker
 docker run -d \
@@ -77,7 +76,10 @@ docker run -d \
 * 在jenkins中docker pull node
 * 安装nginx，把前面打包的dist下面的文件放到/usr/share/html中（注意这里只是测试，然后需要删除或者停止nginx，否则占用80端口）
 ```
-创建流水线vitepress-devops-demo，勾选Gitee webhook 触发构建，Pipeline script from SCM，Jenkinsfile（这个文件需要在webstorm添加，按照流水线语法）
+创建流水线vitepress-devops-demo，
+勾选Gitee webhook 触发构建、
+Pipeline script from SCM、
+Jenkinsfile（这个文件需要在webstorm添加，按照流水线语法）
 ```
 
 ### 配置jenkins
@@ -107,10 +109,10 @@ https://ip/gitee-project/vitepress-devops-demo/  //修改为自己的ip
 URL: https://stenohaline-nondeclaratively-sunni.ngrok-free.dev/gitee-project/vitepress-devops-demo/  //可以测试这个网址是否可以访问到
 ```
 
-测试，在webstorm中修改md然后推送到仓库，可以在jenkins bule ocean插件中看到流水线开始自动部署
+测试，在webstorm中修改md然后推送到仓库，可以在jenkins中使用bule ocean插件看到流水线开始自动部署
 
 ### 其他问题
-webhook的ip需要时公网ip，如果是在自己虚拟机中进行创建可以使用ngrok，会得到一个公网地址
+webhook的ip需要时公网ip，如果是在自己虚拟机中进行创建可以使用ngrok（内网穿透），会得到一个公网地址
 ```
 wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 tar -xzf ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin/
@@ -122,3 +124,8 @@ ngrok http 8080  //启动ngrok
 ```
 
 ## 📊 效果截图
+![VitePress](./images/VitePress.png)
+![jenkins-流水线](./images/jenkins-流水线.png)
+![jenkins-制品](./images/jenkins-制品.png)
+
+
