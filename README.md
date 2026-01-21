@@ -112,7 +112,7 @@ URL: https://stenohaline-nondeclaratively-sunni.ngrok-free.dev/gitee-project/vit
 测试，在webstorm中修改md然后推送到仓库，可以在jenkins中使用bule ocean插件看到流水线开始自动部署
 
 ### 其他问题
-webhook的ip需要时公网ip，如果是在自己虚拟机中进行创建可以使用ngrok（内网穿透），会得到一个公网地址
+webhook添加的ip需要是公网ip，如果是在自己虚拟机中进行创建可以使用ngrok（内网穿透），会得到一个公网地址
 ```
 wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 tar -xzf ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin/
